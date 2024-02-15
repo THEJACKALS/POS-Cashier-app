@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchPopup.css'; // Import file CSS baru
+import './Pos.css'; // Import file CSS baru
 
 const SearchPopup = ({ handleClose }) => {
   const handleSearch = () => {
