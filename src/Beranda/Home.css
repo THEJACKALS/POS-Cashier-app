@@ -1,0 +1,60 @@
+.container {
+    background-image: url('../Assets/Images/Home.jpg'); /* Ganti dengan path gambar latar belakang Anda */
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .heading {
+    color: rgb(208, 208, 208);
+    text-align: center;
+    font-family: 'Courier Prime', Courier, monospace;
+    font-size: 48px;
+    overflow: hidden; /* Agar teks typewriter terpotong */
+    border-right: .15em solid orange; /* Efek cursor blinking */
+    white-space: nowrap; /* Agar teks tidak wrap */
+    margin: 0 auto; /* Center the element */
+    padding: .5em 0; /* Padding top and bottom */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+    to {
+      width: 100%
+    }
+  }
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent
+    }
+    50% {
+      border-color: orange
+    }
+  }
+
+  .button-container {
+    display: flex;
+    gap: 20px;
+  }
+
+  .button {
+    width: 210px;
+    height: 40px;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: blueviolet;
+    font-family: 'Courier Prime', Courier, monospace;
+    border-radius: 5px;
+  }
+
+  
