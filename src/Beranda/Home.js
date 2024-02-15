@@ -9,19 +9,22 @@ const Home = () => {
   useEffect(() => {
     const text = "Selamat datang di Aplikasi Kasir!";
     let index = 0;
-
-    const interval = setInterval(() => {
-      headingRef.current.innerText += text[index];
-      index++;
-
-      if (index === text.length) {
-        clearInterval(interval);
-      }
-    }, 100);
-
-    return () => clearInterval(interval);
+  
+    if (headingRef.current) { // Menambahkan kondisi untuk memeriksa apakah headingRef sudah terdefinisi
+      const interval = setInterval(() => {
+        headingRef.current.innerText += text[index];
+        index++;
+  
+        if (index === text.length) {
+          clearInterval(interval);
+          headingRef.current.classList.add('blink-caret'); // Menambahkan kelas untuk membuat kursor berkedip
+        }
+      }, 100);
+  
+      return () => clearInterval(interval);
+    }
   }, []);
-
+  
   const handleNavigateTo = (path) => {
     navigate(path);
   };

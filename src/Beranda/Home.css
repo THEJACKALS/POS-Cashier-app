@@ -16,30 +16,34 @@
     font-family: 'Courier Prime', Courier, monospace;
     font-size: 48px;
     overflow: hidden; /* Agar teks typewriter terpotong */
-    border-right: .15em solid orange; /* Efek cursor blinking */
     white-space: nowrap; /* Agar teks tidak wrap */
     margin: 0 auto; /* Center the element */
     padding: .5em 0; /* Padding top and bottom */
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    border-right: .15em solid orange; /* Efek cursor blinking */
   }
   
   @keyframes typing {
     from {
-      width: 0
+      width: 0;
     }
     to {
-      width: 100%
+      width: 100%;
     }
+  }
+  
+  .blink-caret {
+    animation: blink-caret .75s step-end infinite;
   }
   
   @keyframes blink-caret {
     from, to {
-      border-color: transparent
+      border-color: transparent;
     }
     50% {
-      border-color: orange
+      border-color: orange;
     }
   }
+  
 
   .button-container {
     display: flex;
