@@ -1,43 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css'; // Import file CSS baru
+import useTypewriter from './typewriter'; // Import hook useTypewriter
 
 const Home = () => {
   const navigate = useNavigate();
-  const headingRef = useRef();
+  const headingRef = useTypewriter("LOCALSALARY POS"); // Menggunakan hook useTypewriter
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const text = "LOCALSALARY POS";
-    let index = 0;
-
-    if (headingRef.current) {
-      const interval = setInterval(() => {
-        headingRef.current.innerText += text[index];
-        index++;
-
-        // Menambahkan spasi setelah setiap karakter
-        if (index < text.length) {
-          headingRef.current.innerText += ' ';
-        }
-
-        if (index === text.length) {
-          clearInterval(interval);
-          headingRef.current.classList.add('blink-caret');
-        }
-      }, 100);
-
-      return () => clearInterval(interval);
-    }
-  }, []);
 
   const handleNavigateTo = (path) => {
     navigate(path);
   };
 
-const handleMenuButtonClick = () => {
-  setMenuOpen(prevMenuOpen => !prevMenuOpen);
-};
+  const handleMenuButtonClick = () => {
+    setMenuOpen(prevMenuOpen => !prevMenuOpen);
+  };
 
   return (
     <div className="container">

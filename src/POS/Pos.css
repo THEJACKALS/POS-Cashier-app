@@ -1,0 +1,55 @@
+/* HEADER */
+
+.header {
+    background-color: #95DEC0;
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+    font-family: 'Courier Prime', Courier, monospace;
+    height: 160px;
+        
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .header h1 {
+    width: 600px;
+    height: 40px;
+    margin: 0;
+    font-size: 24px;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .total {
+    font-family: 'Courier Prime', Courier, monospace;
+    font-size: 70px;
+    font-weight: bold;
+    padding: 30px 10px;
+  }
+  
+  /*BODY*/
+
+  .body {
+    padding: 20px;
+  }
+  
+  .search-button {
+    width: 200px;
+    height: 50px;
+    font-size: 23px;
+    font-family: 'Courier Prime', Courier, monospace;
+    background-color: #95DEC0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-left: -10px; /* Menempatkan tombol di sebelah kiri */
+  }
+  
+  

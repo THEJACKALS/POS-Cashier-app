@@ -1,37 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react';
+import './Pos.css'; // Import file CSS baru
+import SearchPopup from './SearchPopup'; // Import komponen SearchPopup
 
-const Header = ({ totalPrice }) => {
+const Header = ({ credits, total }) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false); // State untuk mengontrol tampilan popup
+
+  const togglePopup = () => {
+    setIsPopupOpen(prevState => !prevState);
+  };
+
   return (
-    <header className="header" style={{ backgroundColor: 'green' }}>
-      <h1>DNR Pulukan</h1>
-      <h2>Total: Rp. {totalPrice}</h2>
+    <header className="header" style={{ backgroundColor: '#95DEC0' }}>
+      <div className="header-content">
+        <div className="header-left">
+          <h1>DNR Pulukan</h1>
+        </div>
+        <div className="header-right">
+          <div className="total">Rp. 1000{total}</div>
+        </div>
+      </div>
+      {isPopupOpen && <SearchPopup handleClose={togglePopup} />} {/* Menampilkan popup jika isPopupOpen true */}
+      <button className="search-button" onClick={togglePopup}>Cari Barang</button> {/* Tombol pencarian */}
     </header>
-  )
-}
-
-const Product = ({ onBuy, price }) => {
-  return (
-    <div>
-      <h3>Product Name</h3>
-      <p>Rp. {price}</p>
-      <button onClick={() => onBuy(price)}>Beli</button>
-    </div>
   );
-}
+};
 
-const App = () => {
-  const [totalPrice, setTotalPrice] = React.useState(0);
-
-  const handleBuy = (price) => {
-    setTotalPrice(totalPrice + price);
-  }
-
-  return (
-    <div>
-      <Header totalPrice={totalPrice} />
-      <Product onBuy={handleBuy} price={10000} />
-    </div>
-  );
-}
-
-export default App;
+export default Header;
