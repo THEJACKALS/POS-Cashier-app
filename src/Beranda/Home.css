@@ -1,5 +1,5 @@
 .container {
-    background-image: url('../Assets/Images/Home.jpg'); /* Ganti dengan path gambar latar belakang Anda */
+    background-image: url('../Assets/Images/Home2.jpg'); /* Ganti dengan path gambar latar belakang Anda */
     background-size: cover;
     background-position: center;
     width: 100vw;
@@ -11,15 +11,19 @@
   }
   
   .heading {
-    color: rgb(208, 208, 208);
+    color: rgb(255, 255, 255);
     text-align: center;
-    font-family: 'Courier Prime', Courier, monospace;
-    font-size: 48px;
+    font-family: 'Freshman', sans-serif;
+    font-size: 84px;
     overflow: hidden; /* Agar teks typewriter terpotong */
     white-space: nowrap; /* Agar teks tidak wrap */
     margin: 0 auto; /* Center the element */
     padding: .5em 0; /* Padding top and bottom */
-    border-right: .15em solid orange; /* Efek cursor blinking */
+    border-right: .15em solid rgb(59, 208, 186); /* Efek cursor blinking */
+    text-shadow: -1px -1px 0 #000,  
+                1px -1px 0 rgb(47, 255, 0),
+               -1px  1px 0 rgb(255, 0, 0),
+                1px  1px 0 rgb(25, 4, 255);
   }
   
   @keyframes typing {
@@ -40,7 +44,7 @@
       border-color: transparent;
     }
     50% {
-      border-color: orange;
+      border-color: rgb(59, 208, 186);
     }
   }
   
@@ -52,13 +56,56 @@
 
   .button {
     width: 210px;
-    height: 40px;
+    height: 70px;
     margin: 10px;
     padding: 10px 20px;
-    font-size: 16px;
-    color: blueviolet;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
     font-family: 'Courier Prime', Courier, monospace;
+    border-radius: 5px;
+    background-color: rgb(59, 208, 186);
+  }
+
+/* Popup */ 
+
+  .menu-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer; 
+    z-index: 1000;
+  }
+  
+  .hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px 0;
+  }
+  
+  .popup {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    /* Style lainnya untuk tampilan popup */
+  }
+
+  .popup.active {
+    display: block;
+    background: #3b3939;
+    width: 100px;
+    height: 70px;
+    padding: 30px;
+    font-family: 'Courier Prime', Courier, monospace;
+    text-align: left;
     border-radius: 5px;
   }
 
-  
+  ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+  }
